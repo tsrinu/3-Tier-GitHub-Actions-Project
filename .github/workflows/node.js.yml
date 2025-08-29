@@ -28,8 +28,7 @@ jobs:
           find . -name "*.js" -exec node --check {} +
   gitleaks-scan:
     runs-on: Ubuntu-latest
-    needs: compile
-     - name: Gitleaks Scan
+     - name: gitleaks-scan
         run: |
           gitleaks detect --source ./client --exit-code 1
           gitleaks detect --source ./api --exit-code 1
